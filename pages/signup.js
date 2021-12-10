@@ -23,7 +23,13 @@ const theme = createTheme();
 
 export default function SignUp() {
 
-  /** @type {(event: React.FormEvent<HTMLFormElement>) => void} */
+  // @types/reactをインストールしてるので型定義が使える。
+  // インストールしてないとFormEventなんて型無いよとエラー。
+
+  /** 
+   * @type {(event: React.FormEvent<HTMLFormElement>) => void} 
+   * @description サインアップのボタンを押したらこの関数が実行される。
+  */
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -131,6 +137,18 @@ export default function SignUp() {
           </Container>
         </ThemeProvider>
       </main>
+      <footer className={styles.footer}>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{' '}
+          <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
+        </a>
+      </footer>
     </div>
   );
 }
