@@ -127,7 +127,7 @@ export default function SignUp() {
                 </Grid>
               </Box>
             </Box>
-            <Copyright sx={{ mt: 5 }} />
+            <Copyright sx={{ mt: 5 }} href="https://mui.com/" year={new Date().getFullYear()} />
           </Container>
         </ThemeProvider>
       </main>

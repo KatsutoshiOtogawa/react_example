@@ -1,25 +1,22 @@
 // @ts-check
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Signup.module.css'
-
-import * as React from 'react';
+import {ReactElement} from 'react';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
 /**
- * 
- * @param {{ sx : {mt: number}}} props 
- * @returns {Typography}
+ * CopyWriteを表示させるためのコンポーネントです。
+ * @param {{ sx : {mt: number}, href: string, year: number}} props 
+ * @returns {ReactElement}
  */
 export function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    // <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography variant="body2" color="text.secondary" align="center" sx={props.sx} >
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href={props.href} >
         Your Website
       </Link>{' '}
-      {new Date().getFullYear()}
+      {props.year}
       {'.'}
     </Typography>
   );
